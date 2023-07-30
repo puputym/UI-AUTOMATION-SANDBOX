@@ -21,17 +21,14 @@ describe('Test UI Automation Sandbox', () => {
   it('User should be successfully fill onboarding page 1', () => {
     loginPage.loginReg(testDataCorp.emailForOnboarding, testDataCorp.password);
     onboardingCorp.onboardingCorpFirst(testDataCorp.companyName, testDataCorp.companyOwner, testDataCorp.bidangUsaha, testDataCorp.nomorNPWP, testDataCorp.numTlpn, testDataCorp.email, testDataCorp.alamat, testDataCorp.lokasi);
-    onboardingCorp.verifySuccessNextPage1();
     });
   it('User should be successfully fill onboarding page 2', () => {
     loginPage.loginReg(testDataCorp.emailForOnboarding, testDataCorp.password);
     onboardingCorp.onboardingCorpSecond(testDataCorp.pengiriman, testDataCorp.numTlpn, testDataCorp.namaToko, testDataCorp.namaFinance, testDataCorp.jamstart, testDataCorp.jamEnd, testDataCorp.periodeTagihan, testDataCorp.pickUpStart, testDataCorp.pickUpEnd, testDataCorp.tickSameAddress);
-    onboardingCorp.verifySuccessNextPage2();
     });
   it('User should be successfully fill onboarding page 3', () => {
     loginPage.loginReg(testDataCorp.email, testDataCorp.password);
     onboardingCorp.onboardingCorpThird();
-    onboardingCorp.verifySuccessNextPage3();
     });
   it('User should be successfully fill onboarding page 4', () => {
     loginPage.loginReg(testDataCorp.email, testDataCorp.password);

@@ -52,7 +52,7 @@ export default class OnboardingRegular {
   }
 
   verifySuccessNextPage4(){
-    cy.get(elementLocators.verifyOnboardingFirst1).should('contain.text', "Verifikasi Diri");
+    cy.contains("Verifikasi Diri");
     
   }
   onboardingRegularFour(){

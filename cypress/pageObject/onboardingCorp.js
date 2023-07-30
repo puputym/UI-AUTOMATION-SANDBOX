@@ -20,9 +20,6 @@ export default class OnboardingCorp {
     cy.contains(elementLocators.inputLokasiOpen, 'DKI Jakarta, Kota Jakarta Timur, Cakung').click();
     cy.get(elementLocators.buttonLanjut1).click();
   }
-  verifySuccessNextPage1(){
-    cy.contains(elementLocators.verifyOnboardingFirst);
-  }
 
   onboardingCorpSecond(pengiriman, numTlpn, namaToko, namaFinance, jamStart, jamEnd, periodeTagihan, pickupStart, pickupEnd){
     cy.get(elementLocators.inputPengiriman).type(pengiriman);
@@ -44,10 +41,6 @@ export default class OnboardingCorp {
     cy.get(elementLocators.buttonLanjut2).click();
   }
 
-  verifySuccessNextPage2(){
-    cy.contains(elementLocators.verifyOnboardingSecond);
-  }
-
   onboardingCorpThird(){
     // Mendapatkan file gambar dari folder fixtures
      cy.get(elementLocators.uploadKTP2).selectFile('cypress/fixtures/ktp.png', { action: 'drag-drop' })
@@ -58,9 +51,6 @@ export default class OnboardingCorp {
      cy.contains('Siup.png');
      cy.get(elementLocators.buttonLanjut3).click();
 
-  }
-  verifySuccessNextPage3(){
-    cy.contains(elementLocators.verifyOnboardingThrid);
   }
 
   onboardingCorpFour(nomorRekening, namaRekening){

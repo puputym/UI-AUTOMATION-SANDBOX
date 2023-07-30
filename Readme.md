@@ -17,3 +17,6 @@ you can see the result at folder mochawesome-report
 
 ## link Test Case
 https://docs.google.com/spreadsheets/d/1yo-c5LnGPlt32uAAT2mpnmD3nW6gF3j6fM65zrguS4Q/edit?usp=sharing
+
+## note
+please change email for on boarding corp and regular for tetsing because i using dummy email which can only be used once on testdatacorp.json and testdataReg.json "emailForOnboarding"
