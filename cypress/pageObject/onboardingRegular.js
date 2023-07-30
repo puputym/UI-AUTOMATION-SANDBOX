@@ -1,9 +1,6 @@
 import { ElementLocators } from '../elementLocator/elementLocator';
 import "cypress-file-upload";
 
-
-
-
 const elementLocators = new ElementLocators();
 export default class OnboardingRegular {
  
@@ -20,7 +17,7 @@ export default class OnboardingRegular {
     cy.get(elementLocators.provinsi).type(provinsi);
     cy.get(elementLocators.provinsi).should('be.visible');
     cy.contains(elementLocators.inputLokasiOpen, 'DKI Jakarta, Kota Jakarta Timur, Cakung').click();
-    cy.get(elementLocators.buttonLanjut).click(); 
+    cy.contains("Selanjutnya").click(); 
   }
   
   verifySuccessNextPage1(){
@@ -28,6 +25,7 @@ export default class OnboardingRegular {
   }
   
   onboardingRegularSecond(){
+    cy.contains("Selanjutnya").click(); 
     cy.get(elementLocators.tickSameAddress).click();
     cy.contains("Selanjutnya").click(); 
     cy.wait(3600)
@@ -38,6 +36,7 @@ export default class OnboardingRegular {
 
   }
   onboardingRegularThrid(nomorRekening, namaRekening){
+    cy.contains("Selanjutnya").click(); 
     cy.get(elementLocators.inputBank).click();
     cy.get(elementLocators.inputBank).should('be.visible');
     cy.contains(elementLocators.inputBankOpen, 'BCA').click();
@@ -59,9 +58,11 @@ export default class OnboardingRegular {
     // Mendapatkan file gambar dari folder fixtures
 
       // // use Cypress’ abilty to handle dropzones
+      cy.contains("Selanjutnya").click(); 
+
       cy.get(elementLocators.uploadKTP).selectFile('cypress/fixtures/ktp.png', { action: 'drag-drop' })
       cy.contains('ktp.png');
-      cy.get(elementLocators.buttonLanjut).click();
+      cy.contains("Selanjutnya").click(); 
   }
   verifyOnboardingSuccess() {
     cy.get(elementLocators.verifyOnboarding).should('contain.text', 'Dashboard');
