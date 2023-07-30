@@ -32,7 +32,7 @@ describe('Test UI Automation Sandbox', () => {
   });
   it('User should be successfully fill onboarding page 2',  ()=> {
     loginPage.loginReg(testDataReg.emailForOnboarding, testDataReg.password);
-    onboardingRegular.onboardingRegularSecond(testDataReg.nameToko, testDataReg.nameOwner, testDataReg.numberPhone, testDataReg.adress, testDataReg.provinsi);
+    onboardingRegular.onboardingRegularSecond();
     onboardingRegular.verifySuccessNextPage3();
   });
   it('User should be successfully fill onboarding page 3', () => {
