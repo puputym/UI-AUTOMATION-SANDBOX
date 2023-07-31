@@ -1,7 +1,6 @@
 import LoginPage from '../pageObject/loginPages';
 import testDataReg from '../fixtures/testDataReg.json';
 import OnboardingRegular from '../pageObject/onboardingRegular';
-import 'cypress-file-upload';
 describe('Test UI Automation Sandbox', () => {
 
   const loginPage = new LoginPage();
@@ -31,7 +30,7 @@ describe('Test UI Automation Sandbox', () => {
   });
   it('User should be successfully fill onboarding page 2',  ()=> {
     loginPage.loginReg(testDataReg.emailForOnboarding, testDataReg.password);
-    onboardingRegular.onboardingRegularSecond();
+    onboardingRegular.onboardingRegularSecond(testDataReg.nameToko, testDataReg.nameOwner, testDataReg.numberPhone, testDataReg.adress, testDataReg.provinsi);
   });
   it('User should be successfully fill onboarding page 3', () => {
     loginPage.loginReg(testDataReg.emailForOnboarding, testDataReg.password);

@@ -16,19 +16,26 @@ export default class OnboardingRegular {
     cy.get(elementLocators.address).type(address);
     cy.get(elementLocators.provinsi).type(provinsi);
     cy.get(elementLocators.provinsi).should('be.visible');
-    cy.contains(elementLocators.inputLokasiOpen, 'DKI Jakarta, Kota Jakarta Timur, Cakung').click();
-    cy.contains("Selanjutnya").click(); 
+    cy.contains(elementLocators.inputLokasiOpen, 'DKI Jakarta, Kota Jakarta Pusat, Cempaka Putih').click();
+    cy.get(elementLocators.buttonLanjut).click();
+    cy.wait(3600)
   }
   
   verifySuccessNextPage1(){
     cy.get(elementLocators.verifyOnboardingNextPage).should('contain.text', "Informasi Toko");
   }
   
-  onboardingRegularSecond(){
-    cy.contains("Selanjutnya").click(); 
-    cy.get(elementLocators.tickSameAddress).click();
-    cy.contains("Selanjutnya").click(); 
+  onboardingRegularSecond(nameToko, nameOwner, numbertlpn, address, provinsi){
+    cy.get(elementLocators.nameToko).type(nameToko);
+    cy.get(elementLocators.nameOwner).type(nameOwner);
+    cy.get(elementLocators.numTlpn).type(numbertlpn);
+    cy.get(elementLocators.address).type(address);
+    cy.get(elementLocators.provinsi).type(provinsi);
+    cy.get(elementLocators.provinsi).should('be.visible');
+    cy.contains(elementLocators.inputLokasiOpen, 'DKI Jakarta, Kota Jakarta Pusat, Cempaka Putih').click();
+    cy.get(elementLocators.buttonLanjut).click();
     cy.wait(3600)
+
     
   }
   verifySuccessNextPage2(){
@@ -36,13 +43,13 @@ export default class OnboardingRegular {
 
   }
   onboardingRegularThrid(nomorRekening, namaRekening){
-    cy.contains("Selanjutnya").click(); 
     cy.get(elementLocators.inputBank).click();
     cy.get(elementLocators.inputBank).should('be.visible');
-    cy.contains(elementLocators.inputBankOpen, 'BCA').click();
+    cy.contains(elementLocators.inputBankOpen, 'BCA Syariah').click();
     cy.get(elementLocators.inputRekening).type(nomorRekening);
     cy.get(elementLocators.inputNamaRekening).type(namaRekening);
-    cy.contains("Selanjutnya").click();
+    cy.get(elementLocators.buttonLanjut).click();
+    cy.wait(3600)
     
   }
   verifySuccessNextPage3(){
@@ -58,17 +65,15 @@ export default class OnboardingRegular {
     // Mendapatkan file gambar dari folder fixtures
 
       // // use Cypress’ abilty to handle dropzones
-      cy.contains("Selanjutnya").click(); 
-
       cy.get(elementLocators.uploadKTP).selectFile('cypress/fixtures/ktp.png', { action: 'drag-drop' })
       cy.contains('ktp.png');
-      cy.contains("Selanjutnya").click(); 
+      cy.get(elementLocators.buttonLanjut).click();
   }
   verifyOnboardingSuccess() {
     cy.get(elementLocators.verifyOnboarding).should('contain.text', 'Dashboard');
   }
   failedFillOnboarding(){
-    cy.get(elementLocators.buttonLanjut1).click();
+    cy.get(elementLocators.buttonLanjut).click();
     cy.get(elementLocators.verifyBlankField).should('contain.text', 'tidak boleh kosong');
   }
 }

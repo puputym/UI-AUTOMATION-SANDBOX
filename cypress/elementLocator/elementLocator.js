@@ -28,16 +28,17 @@ export class ElementLocators {
     numTlpn = ':nth-child(2) > .col-md-6 > .form-control'
     address = ':nth-child(3) > .col-md-12 > .form-control'
     provinsi = '.multiselect__tags'
-    inputLokasiOpen = '.multiselect__option--highlight > span' 
+    inputLokasiOpen = '#null-1 > .multiselect__option > span'
     buttonLanjut = '.flex > .btn'
     verifyOnboardingLogin = '.text-center > h3'
     verifyOnboardingNextPage = '.mb-4'
     verifyOnboardingNextPage1 = 'h4'
 
     tickSameAddress = '#store-address'
+    
 
     inputBank = '.multiselect__select'
-    inputBankOpen = '#listbox-select-layout'
+    inputBankOpen = '#select-layout-1 > .multiselect__option'
     inputRekening = '.row > :nth-child(2) > .form-control'
     inputNamaRekening = ':nth-child(3) > .mb-3 > .form-control'
 

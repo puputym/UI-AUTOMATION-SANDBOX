@@ -28,7 +28,7 @@ https://docs.google.com/spreadsheets/d/1yo-c5LnGPlt32uAAT2mpnmD3nW6gF3j6fM65zrgu
 4. Forgot Password
 ![Alt text](image-3.png)
 5. Onboarding regular
-![Alt text](image-4.png)
+![Alt text](image-6.png)
 6. Onboarding corp
 ![Alt text](image-5.png)
 
